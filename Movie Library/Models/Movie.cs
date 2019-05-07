@@ -18,6 +18,6 @@ namespace Movie_Library.Models
         public string genre { get; set; }
 
         [Display(Name = "Director: ")]
-        public string name { get; set; }
+        public string directorname { get; set; }
     }
 }

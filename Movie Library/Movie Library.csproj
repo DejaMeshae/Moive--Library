@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201905072016227_AddedMovieModel.Designer.cs">
       <DependentUpon>201905072016227_AddedMovieModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905072110165_SeededDataInMovieModel.cs" />
+    <Compile Include="Migrations\201905072110165_SeededDataInMovieModel.Designer.cs">
+      <DependentUpon>201905072110165_SeededDataInMovieModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -316,6 +320,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905072016227_AddedMovieModel.resx">
       <DependentUpon>201905072016227_AddedMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905072110165_SeededDataInMovieModel.resx">
+      <DependentUpon>201905072110165_SeededDataInMovieModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
