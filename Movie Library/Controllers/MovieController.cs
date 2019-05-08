@@ -12,19 +12,15 @@ namespace Movie_Library.Controllers
     public class MovieController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        //private IEnumerable<Movie> movie;
 
-        //Movie[] movie = new Movie[]
-        //{
-        //    new Movie { Id = 1, title ="Go", genre = "Comedy", directorname = "John" }
-        //};
+
 
 
         //GET: Movies
         public IHttpActionResult GetAllMovies()
         {
-            Movie movie = new Movie();
-            return Ok(movie);
+            var listOfMovies = db.Movie.ToList();
+            return Ok(listOfMovies);
         }
 
         //POST: Movies
