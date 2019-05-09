@@ -12,12 +12,15 @@ namespace Movie_Library.Models
         public int Id { get; set; }
 
         [Display(Name = "Movie: ")]
-        public string title { get; set; }
+        public string Title { get; set; }
 
         [Display(Name = "Genre: ")]
-        public string genre { get; set; }
+        public string Genre { get; set; }
 
         [Display(Name = "Director: ")]
-        public string directorname { get; set; }
+        public string Directorname { get; set; }
+
+        public System.Data.Entity.DbSet<Movie_Library.Models.Movie> Movies { get; set; }
+
     }
 }

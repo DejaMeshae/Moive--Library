@@ -207,7 +207,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -220,8 +220,20 @@
     <Compile Include="Migrations\201905072110165_SeededDataInMovieModel.Designer.cs">
       <DependentUpon>201905072110165_SeededDataInMovieModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905081950131_ChangedTheProperties.cs" />
+    <Compile Include="Migrations\201905081950131_ChangedTheProperties.Designer.cs">
+      <DependentUpon>201905081950131_ChangedTheProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905082326235_MovieController.cs" />
+    <Compile Include="Migrations\201905082326235_MovieController.Designer.cs">
+      <DependentUpon>201905082326235_MovieController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905090009217_MovieControllerseeded.cs" />
+    <Compile Include="Migrations\201905090009217_MovieControllerseeded.Designer.cs">
+      <DependentUpon>201905090009217_MovieControllerseeded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Controllers\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -330,6 +342,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905072110165_SeededDataInMovieModel.resx">
       <DependentUpon>201905072110165_SeededDataInMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081950131_ChangedTheProperties.resx">
+      <DependentUpon>201905081950131_ChangedTheProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905082326235_MovieController.resx">
+      <DependentUpon>201905082326235_MovieController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905090009217_MovieControllerseeded.resx">
+      <DependentUpon>201905090009217_MovieControllerseeded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
