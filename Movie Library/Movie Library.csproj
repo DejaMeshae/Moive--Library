@@ -252,6 +252,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
+    <Content Include="MovieLibrary-FrontEnd\MovieLibrary.css" />
+    <Content Include="MovieLibrary-FrontEnd\MovieLibrary.html" />
+    <Content Include="MovieLibrary-FrontEnd\MovieLibrary.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

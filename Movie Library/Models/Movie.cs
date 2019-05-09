@@ -20,7 +20,5 @@ namespace Movie_Library.Models
         [Display(Name = "Director: ")]
         public string Directorname { get; set; }
 
-        public System.Data.Entity.DbSet<Movie_Library.Models.Movie> Movies { get; set; }
-
     }
 }

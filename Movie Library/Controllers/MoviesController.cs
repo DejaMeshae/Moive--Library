@@ -8,12 +8,26 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.Filters;
 using Movie_Library.Models;
 
 namespace Movie_Library.Controllers
 {
+    [AllowCrossSite]
     public class MoviesController : ApiController
     {
+        
+        public class AllowCrossSiteAttribute : System.Web.Http.Filters.ActionFilterAttribute
+        {
+            public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
+            {
+                if (actionExecutedContext.Response != null)
+                    actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+                base.OnActionExecuted(actionExecutedContext);
+            }
+        }
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Movies
