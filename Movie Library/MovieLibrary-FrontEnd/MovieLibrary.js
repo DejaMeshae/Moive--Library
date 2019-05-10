@@ -8,7 +8,7 @@ $.getJSON(uri)
         // On success, 'data' contains a list of movies.
         $.each(data, function (key, item) {
             // Add a list item for the product.
-            $('<li>' + key + ' ' + item + '</li>', { text: formatItem(item) }).appendTo($('#Movies'));
+            $('ul').find("span").css({ "color": "red", "border": "2xp solid red" }); /*+ key + ' ' + item + '</li>', { text: formatItem(item) }).appendTo($('#Movies'));*/
         });
     });
 });
@@ -29,4 +29,12 @@ function find() {
         .fail(function (jqXHR, textStatus, err) {
             $('#movie').text('Error: ' + err);
         });
+
+    self.detail = ko.observable();
+
+    self.getBookDetail = function (item) {
+        ajaxHelper(booksUri + item.Id, 'GET').done(function (data) {
+            self.detail(data);
+        });
+    }
 }

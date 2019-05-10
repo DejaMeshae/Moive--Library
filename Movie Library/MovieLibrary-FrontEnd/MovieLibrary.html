@@ -1,50 +1,30 @@
 <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml">
+
     <head>
         <title>Movie Library</title>
+        <link rel="stylesheet" href="MovieLibrary.css"> <!--refrence CSS file-->
     </head>
     <body>
 
         <div>
-            <h2>All Movies</h2>
+            <p2 style="color:teal;"><h1 id="bigID">Movies Library</h1></p2>
+            <img src="../Images/tenor.gif" alt="Gif of Movie reel" align="middle" style="width:20%" />
             <ul id="Movies" />
         </div>
         <div>
-            <!--<h2>Search by ID</h2>
+            <p><h2>Search by ID</h2>
             <input type="text" id="movieId" size="5" />
-            <input type="button" value="Search" onclick="find();" /> <!--//after you figure this out find out how to add a seperate button each search-->
-            <!--<p id="movie" />-->
+            <input type="button" value="Search" onclick="find();" /></p>
+            <p id="movie" />
 
         </div>
 
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
         <script src="MovieLibrary.js"></script>
-    <!--//        var uri = 'api/Movies';
 
-    //$(document).ready(function () {
-    //            // Send an AJAX request
-    //            $.getJSON(uri)
-    //                .done(function (data) {
-    //                    // On success, 'data' contains a list of movies.
-    //                    $.each(data, function (key, item) {
-    //                        // Add a list item for the product.
-    //                        $('<li>', { text: formatItem(item) }).appendTo($('#Movies')); //my unordered list refer to line 41
-    //                    });
-    //                });
-    //        });
-    //        function formatItem(item) {
-    //            return item.Name + ': $;
-    //        }
 
-    //        function find() {
-    //            var id = $('#moviId').val();
-    //            $.getJSON(uri + '/' + id)
-    //                .done(function (data) {
-    //                    $('#movie').text(formatItem(data));
-    //                })
-    //                .fail(function (jqXHR, textStatus, err) {
-    //                    $('#movie').text('Error: ' + err);
-    //                });
-    //        }-->
+            
+
 </body>
 </html>
