@@ -30,7 +30,7 @@ namespace Movie_Library.Controllers
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [HttpGet]
+        
         // GET: api/Movies
         public IQueryable<Movie> GetMovies()
         {
@@ -42,7 +42,8 @@ namespace Movie_Library.Controllers
         [ResponseType(typeof(Movie))]
         public IHttpActionResult GetMovie(int id)
         {
-            Movie movie = db.Movies.Find(id);
+            Movie movie = db.Movies.Where(m => m.Id == id).FirstOrDefault();
+            //Movie movie = db.Movies.Find(id);
             if (movie == null)
             {
                 return NotFound();

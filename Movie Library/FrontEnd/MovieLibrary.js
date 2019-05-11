@@ -1,3 +1,10 @@
+function movieGet(ctl) {
+    //gets the movie id from data
+    var id = $(ctl).data("id");
+    //hides movie id in the hidden field
+    $("#productid").val(id);
+}
+
 function movieList() {
     //Call my API to get a list of movies
     $.ajax({
@@ -15,7 +22,7 @@ function movieList() {
 
         //My list of movies
 function movieListSuccess(movies) {
-    $.each(movies, function (index, movie) { //Iterate over my collection of data
+    $.each(movies, function (key, movie) { //Iterate over my collection of data
         movieAddRow(movie); //Add a row to my movie table 
     });
 }
@@ -26,20 +33,38 @@ function movieAddRow(movie) {
     }
     $("#movieTable tbody").append( //apphend row to <table>
         movieBuildTableRow(movie));
+
 }
         //build new row for editing a row in my table
 function movieBuildTableRow(movie) {
     var ret =
         "<tr>" +
+        "<td>" +
+        "<button type='button' " +
+        "onclick='movieGet(this);' " + //gets the value of the movie id in the data-id bellow
+        "class='btn btn-default' " +
+        "data-id='" + movie.Id + "'>" +
+        "<span class='glyphicon glyphicon-edit' />"
+        + "</button>" +
+        "</td >" +
         "<td>" + movie.Title + "</td>" +
-        "<td>" + movie.Genre + "</td>"
-        + "<td>" + movie.Directorname + "</td>" +
+        "<td>" + movie.Genre + "</td>" +
+        "<td>" + movie.Directorname + "</td>" +
         "</tr>";
     return ret;
 }
 
         //if an error happens this is how I want it to display
-
+function handleException(request, message, error) {
+    var msg = "";
+    msg += "Code: " + request.status + "\n";
+    msg += "Text: " + request.statusText + "\n"
+    if (request.responseJSON != null) {
+        msg += "Message" +
+            request.responseJSON.Message + "\n";
+    }
+    alert(msg);
+}
 
 
 
@@ -110,4 +135,10 @@ function movieBuildTableRow(movie) {
     //        $('#movie').text('Error: ' + err);
     //    });
     //}
+
+
+
+
+
+
 
