@@ -15,16 +15,19 @@ function updateClick() {
     if ($("#updateButton").text().trim() == "Add") {
         movieAdd(Movie);
     }
+    else {
+        movieUpdate(Movie)
+    }
 
 }
-
+    //POST
 function movieAdd(movie) {
     $.ajax({
         url: '/api/Movies/',
         type: 'POST',
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify(movie),
-        sucess: function (movies) {
+        sucess: function (movie) {
             movieAddSuccess(movie); 
         },
         error: function (request, message, error) {
@@ -32,6 +35,23 @@ function movieAdd(movie) {
         }
     });
 }
+
+    //PUT
+function movieUpdate(movie) {
+    $.ajax({
+        url: '/api/Movies/',
+        type: 'PUT',
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(movie),
+        sucess: function (movie) {
+            movieAddSuccess(movie);
+        },
+        error: function (request, message, error) {
+            handleException(request, message, error);
+        }
+    });
+}
+
 
 function movieAddSuccess(movie) {
     movieAddRow(movie);
@@ -49,7 +69,7 @@ var Movie = {
     Directorname: ""
 }
 
-
+    //GET
 function movieList() {
     //Call my API to get a list of movies
     $.ajax({
@@ -79,7 +99,23 @@ function movieGet(ctl) {
     $("#movieid").val(id);
 }
 
-       //get 1 movie back
+function movieDelete(ctl) {
+    //gets the movie id from data
+    var id = $(ctl).data("id");
+    //hides movie id in the hidden field
+    $.ajax({
+        url: "/api/movies" + id,
+        type: 'DELETE',
+        success: function (movie) {
+            $(ctl).parents("tr").remove();
+        },
+        error: function (request, message, error) {
+            handleException(request, message, error);
+        }
+    });
+}
+
+       //GET 1 movie back
 $.ajax({
     url: "/api/movies" + id,
     type: 'GET',
@@ -102,6 +138,9 @@ function movieToFields(movie) {
 }
 
 
+
+
+
        //adds a new row to my HTML table
 function movieAddRow(movie) {
     if ($("#movieTable tbody").length == 0) { //checks <tbody> tag to see if there is one and if there is not then create one 
@@ -118,6 +157,14 @@ function movieBuildTableRow(movie) {
         "<td>" +
         "<button type='button' " +
         "onclick='movieGet(this);' " + //gets the value of the movie id in the data-id bellow
+        "class='btn btn-default' " +
+        "data-id='" + movie.Id + "'>" +
+        "<span class='glyphicon glyphicon-edit' />"
+        + "</button>" +
+        "<tr>" +
+        "<td>" +
+        "<button type='button' " +
+        "onclick='productDelete(this);' " + //gets the value of the movie id in the data-id bellow
         "class='btn btn-default' " +
         "data-id='" + movie.Id + "'>" +
         "<span class='glyphicon glyphicon-edit' />"
