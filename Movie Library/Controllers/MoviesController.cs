@@ -30,12 +30,14 @@ namespace Movie_Library.Controllers
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [HttpGet]
         // GET: api/Movies
         public IQueryable<Movie> GetMovies()
         {
             return db.Movies;
         }
 
+        [HttpGet]
         // GET: api/Movies/5
         [ResponseType(typeof(Movie))]
         public IHttpActionResult GetMovie(int id)

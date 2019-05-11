@@ -3,25 +3,46 @@
 
     <head>
         <title>Movie Library</title>
-        <link rel="stylesheet" href="MovieLibrary.css"> <!--refrence CSS file-->
+        <link rel="stylesheet" href="MovieLibrary.css"> <!--refrence my CSS file-->
+        <link href="Content/bootstrap.min.css" rel="Stylesheet" />
+
+
     </head>
     <body>
 
         <div>
             <p2 style="color:teal;"><h1 id="bigID">Movies Library</h1></p2>
             <img src="../Images/tenor.gif" alt="Gif of Movie reel" align="middle" style="width:20%" />
-            <ul id="Movies" />
+            <ul id="Movies"></ul> 
         </div>
         <div>
-            <p><h2>Search by ID</h2>
+
+            <div>
+                <!--<ul id="Movies">
+                    <li>The Departed</li>
+                    <li>The Dark Knight</li>
+                    <li>Inception</li>
+                    <li>Pineapple Express</li>
+                    <li>Die Hard</li>  might keep this to show list of movies 
+                </ul>-->
+            </div>
+
+            <h2>Add a movie to the library</h2>
+            <p>Enter movie: <input type="text" id="Enter movie"></p>
+            <button id="add-movie">Add</button>
+
+
+            <!--<p><h2>Search by ID</h2>
             <input type="text" id="movieId" size="5" />
             <input type="button" value="Search" onclick="find();" /></p>
-            <p id="movie" />
+            <p id="movie" />-->
 
         </div>
 
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
         <script src="MovieLibrary.js"></script>
+        <script src="Scripts/jquery-1.9.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
 
 
             

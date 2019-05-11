@@ -1,40 +1,51 @@
-var uri = 'api/Movies';
 
-$(document).ready(function () {
-            // Send an AJAX request
-$.getJSON(uri)
-    .done(function (data) {
-        console.log('data', data);
-        // On success, 'data' contains a list of movies.
-        $.each(data, function (key, item) {
-            // Add a list item for the product.
-            $('ul').find("span").css({ "color": "red", "border": "2xp solid red" }); /*+ key + ' ' + item + '</li>', { text: formatItem(item) }).appendTo($('#Movies'));*/
-        });
+<script>
+    var uri = 'api/Movies';
+
+$(function () {
+    var $movies = $('#movies'); /*cashing my dom (movie object)*/
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/movies',
+        success: function (movies) {
+            $.each(movies, function(i, movie) { /*goes through each item in my movie array and I can run a function based on that array. pass in the movie at each index (i)*/
+                $movies.append('<li>Title: '+ movie.title +'</li>'); /**/
+            });
+        }
     });
 });
+</script>
 
-function formatItem(item) {
-    return item.Name + ': $';
-}
+//$(document).ready(function () {
+//            // Send an AJAX request
+//$.getJSON(uri)
+//    .done(function (data) {
+//        console.log('data', data);
+//        // On success, 'data' contains a list of movies.
+//        $.each(data, function (key, item) {
+//            // Add a list item for the product.
+//            $('ul').find("span").css({ "color": "red", "border": "2xp solid red" }); /*+ key + ' ' + item + '</li>', { text: formatItem(item) }).appendTo($('#Movies'));*/
+//        });
+//    });
 
-function find() {
-    var movieTitle = $('#movieId').val();
+//});
+
+//function formatItem(item) {
+//    return item.Name + ': $';
+//}
+
+//function find() {
+//    var movieTitle = $('#movieId').val();
 
 
 
-    $.getJSON(uri + '/' + id)
-        .done(function (data) {
-            $('#movie').text(formatItem(data));
-        })
-        .fail(function (jqXHR, textStatus, err) {
-            $('#movie').text('Error: ' + err);
-        });
+    //$.getJSON(uri + '/' + id)
+    //    .done(function (data) {
+    //        $('#movie').text(formatItem(data));
+    //    })
+    //    .fail(function (jqXHR, textStatus, err) {
+    //        $('#movie').text('Error: ' + err);
+    //    });
+    //}
 
-    self.detail = ko.observable();
-
-    self.getBookDetail = function (item) {
-        ajaxHelper(booksUri + item.Id, 'GET').done(function (data) {
-            self.detail(data);
-        });
-    }
-}
