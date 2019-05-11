@@ -28,7 +28,7 @@ function movieAdd(movie) {
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify(movie),
         sucess: function (movie) {
-            movieAddSuccess(movie); 
+            movieList(); 
         },
         error: function (request, message, error) {
             handleException(request, message, error);
@@ -43,8 +43,8 @@ function movieUpdate(movie) {
         type: 'PUT',
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify(movie),
-        sucess: function (movie) {
-            movieAddSuccess(movie);
+        success: function (movie) {
+            movieList();
         },
         error: function (request, message, error) {
             handleException(request, message, error);

@@ -4,6 +4,7 @@
 
 <head>
     <title></title>
+    <link rel="stylesheet" href="MovieLibrary.css"> <!--refrence my CSS file-->
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -71,8 +72,6 @@
                     <thead>
                     </thead>
                     <tr>
-                        <th>Edit Movie</th>
-                        <th>Delete Movie</th>
                         <th>Title</th>
                         <th>Genre</th>
                         <th>Director</th>
@@ -84,9 +83,9 @@
         <div class="row">
             <div class="col-sm-6">
                 <!--might delete this button later-->
-                <button type="button" id="addButton"
+                <button type="button" id="updateButton"
                         class="btn btn-primary"
-                        onclick="addClick();">
+                        onclick="updateClick();">
                     List Of Movies 
                 </button>
             </div>
