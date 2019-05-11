@@ -7,12 +7,47 @@ $(document).ready(function () {
 
 //function that handle click event on Update button
 function updateClick() {
+    //create new movie from user input
+    Movie = new Object();
+    Movie.Title = $("#Title").val();
+    Movie.Genre = $("#Genre").val();
+    Movie.Directorname = $("#Directorname").val();
+    if ($("#updateButton").text().trim() == "Add") {
+        movieAdd(Movie);
+    }
+
 }
+
+function movieAdd(movie) {
+    $.ajax({
+        url: '/api/Movies/',
+        type: 'POST',
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(movie),
+        sucess: function (movies) {
+            movieAddSuccess(movie); 
+        },
+        error: function (request, message, error) {
+            handleException(request, message, error);
+        }
+    });
+}
+
+function movieAddSuccess(movie) {
+    movieAddRow(movie);
+}
+
 //function that handle click event on Add button
 function addClick() {
 }
 
-
+    //for POST
+var Movie = {
+    Id: 0,
+    Title: "",
+    Genre: "",
+    Directorname: ""
+}
 
 
 function movieList() {
