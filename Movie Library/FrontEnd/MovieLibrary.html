@@ -28,9 +28,10 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <label for="title">Movie Title</label>
+                            <!--search input for users-->
                             <input type="text" id="title"
                                    class="form-control"
-                                   />
+                                   onclick="movieAddRow(movie)"> <!--maybe change this function later-->
                         </div>
                         <div class="form-group">
                             <label for="genre">
@@ -91,18 +92,5 @@
         </div>
 <input type="hidden" id="movieid" value="0" />
 
-        <script>
-            $(document).ready(function () {
-                //Kick off my ajax request
-                movieList();
-            });
-
-            //function that handle click event on Update button
-            function updateClick() {
-            }
-            //function that handle click event on Add button
-            function addClick() {
-            }
-        </script>
 </body>
 </html>

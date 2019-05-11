@@ -1,3 +1,18 @@
+var uri = 'api/movies';
+
+$(document).ready(function () {
+    //Kick off my ajax request
+    movieList();
+});
+
+//function that handle click event on Update button
+function updateClick() {
+}
+//function that handle click event on Add button
+function addClick() {
+}
+
+
 function movieGet(ctl) {
     //gets the movie id from data
     var id = $(ctl).data("id");
