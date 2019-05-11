@@ -88,6 +88,7 @@ namespace Movie_Library.Controllers
         }
 
         // POST: api/Movies
+        [HttpPost()]
         [ResponseType(typeof(Movie))]
         public IHttpActionResult PostMovie(Movie movie)
         {
