@@ -32,7 +32,8 @@ namespace Movie_Library.Controllers
 
         
         // GET: api/Movies
-        public IQueryable<Movie> GetMovies()
+        public IQueryable<Movie> Get()
+
         {
             return db.Movies;
         }

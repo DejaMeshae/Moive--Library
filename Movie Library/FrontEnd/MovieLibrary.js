@@ -73,7 +73,7 @@ var Movie = {
 function movieList() {
     //Call my API to get a list of movies
     $.ajax({
-        url: '/api/Movies/',
+        url: 'http://localhost:62011/api/movies',
         type: 'GET',
         dataType: 'json',
         sucess: function (movies) {
@@ -115,21 +115,21 @@ function movieDelete(ctl) {
     });
 }
 
-       //GET 1 movie back
-$.ajax({
-    url: "/api/movies" + id,
-    type: 'GET',
-    dataType: 'json',
-    sucess: function (movie) {
-        movieToFields(movie); //puts that movie info in the fields 
-        //set the text on the update button to Update
-     $("#updateButton").text("Update");
-    },
-        //error display
-    error: function (request, message, error) {
-        handleException(request, message, error);
-    }
-});
+       //GET 1 movie back put in a ***function**
+//$.ajax({
+//    url: "/api/movies" + id,
+//    type: 'GET',
+//    dataType: 'json',
+//    sucess: function (movie) {
+//        movieToFields(movie); //puts that movie info in the fields 
+//        //set the text on the update button to Update
+//     $("#updateButton").text("Update");
+//    },
+//        //error display
+//    error: function (request, message, error) {
+//        handleException(request, message, error);
+//    }
+//});
     //once I find the one movie this method set the value of each field with the data of the movie from the database
 function movieToFields(movie) {
     $("#Title").val(movie.Title);
